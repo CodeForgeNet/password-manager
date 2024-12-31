@@ -40,8 +40,9 @@ ul li:hover {
     cursor: pointer;
 }
 
-table{
+table td tr {
     border: 2px solid black;
+    border-collapse: collapse;
 }
 
 .container{
