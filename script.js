@@ -6,11 +6,12 @@ if (data == null) {
     tb.innerHTML = "No data to show"
 } else {
     let arr = JSON.parse(data);
+    let str = ""
     for (let index = 0; index < arr.length; index++) {
         const element = arr[index];
 
 
-        str = `<tr>
+        str += `<tr>
                 <td>${element.website}</td>
                 <td>${element.username}</td>
                 <td>${element.password}</td>
