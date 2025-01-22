@@ -4,7 +4,10 @@
 const deletePassword = (website)=>{
     let data = localStorage.getItem("passwords") 
     let arr = JSON.parse(data);
-    arr 
+    arrUpdated = arr.filter((element)=>{
+        return element.website != website
+    })
+    localStorage.setItem("passwords", JSON.stringify(arrUpdated))
 } 
 
 const showPasswword = () => {
@@ -28,7 +31,7 @@ const showPasswword = () => {
                 <td>${element.website}</td>
                 <td>${element.username}</td>
                 <td>${element.password}</td>
-                <td>${"Delete"}</td>
+                <td><button class="btnsm" onclick="deletePassword(${element.website})">Button</button></td>
             </tr>`
         }
         tb.innerHTML += str

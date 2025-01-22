@@ -81,3 +81,14 @@ form label{
     margin-bottom: 20px;
 }
 
+
+.btnsm{
+    padding: 8px 18px;
+    background: black;
+    color: white;
+    font-weight: 800;
+    border: 2px solid gray;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
