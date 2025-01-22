@@ -1,5 +1,12 @@
 // Logic to fill the table.
 
+//Todo: Add the functionality to delete the password
+const deletePassword = (website)=>{
+    let data = localStorage.getItem("passwords") 
+    let arr = JSON.parse(data);
+    arr 
+} 
+
 const showPasswword = () => {
 
     let tb = document.querySelector("table")
@@ -17,17 +24,14 @@ const showPasswword = () => {
         let str = ""
         for (let index = 0; index < arr.length; index++) {
             const element = arr[index];
-
-
             str += `<tr>
                 <td>${element.website}</td>
                 <td>${element.username}</td>
                 <td>${element.password}</td>
                 <td>${"Delete"}</td>
             </tr>`
-
-            tb.innerHTML += str
         }
+        tb.innerHTML += str
     }
 }
 
