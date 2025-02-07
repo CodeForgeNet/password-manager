@@ -42,7 +42,7 @@ const showPasswword = () => {
                 <th>Websites</th>
                 <th>Username</th>
                 <th>Password</th>
-                <th>Delete</th>
+                <th  >Delete</th>
             </tr>`
         let arr = JSON.parse(data);
         let str = ""
