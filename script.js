@@ -31,7 +31,7 @@ const showPasswword = () => {
                 <td>${element.website}</td>
                 <td>${element.username}</td>
                 <td>${element.password}</td>
-                <td><button class="btnsm" onclick="deletePassword(${element.website})">Button</button></td>
+                <td><button class="btnsm" onclick="deletePassword(${element.website})">Delete</button></td>
             </tr>`
         }
         tb.innerHTML += str
