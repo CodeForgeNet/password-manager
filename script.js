@@ -1,4 +1,21 @@
-// Logic to fill the table.
+function maskPassword(pass) {
+
+    let str = ""
+    for (let index = 0; index < pass.length; index++) {
+        str += "*" // Masking the password
+    }
+    return str
+}
+
+
+function copyText(text) {
+    
+    navigator.clipboard.writeText(text) // Copy text to clipboard 
+
+    // Optionally, provide feedback to the user
+    alert("Text copied to clipboard!");
+}
+
 
 //Todo: Add the functionality to delete the password
 const deletePassword = (website)=>{
@@ -8,8 +25,12 @@ const deletePassword = (website)=>{
         return element.website != website
     })
     localStorage.setItem("passwords", JSON.stringify(arrUpdated))
+    alert(`${website} Password Deleted Successfully`)
+    showPasswword();
 } 
 
+
+//? Logic to fill the table.
 const showPasswword = () => {
 
     let tb = document.querySelector("table")
@@ -28,14 +49,20 @@ const showPasswword = () => {
         for (let index = 0; index < arr.length; index++) {
             const element = arr[index];
             str += `<tr>
-                <td>${element.website}</td>
-                <td>${element.username}</td>
-                <td>${element.password}</td>
-                <td><button class="btnsm" onclick="deletePassword(${element.website})">Delete</button></td>
+                <td>${element.website} <img src="copy.svg" alt="Copy Button" width="24" height="24" onClick="copyText(${element.website})" />
+</td>
+                <td>${element.username} <img src="copy.svg" alt="Copy Button" width="24" height="24" onClick="copyText(${element.username})" />
+</td>
+                <td>${maskPassword(element.password)} <img src="copy.svg" alt="Copy Button" width="24" height="24" onClick="copyText(${element.password})" />
+</td>
+                <td><button class="btnsm" onclick="deletePassword('${element.website}')">Delete</button></td>
             </tr>`
         }
         tb.innerHTML += str
     }
+    website.value = ""
+    username.value = ""
+    password.value = ""
 }
 
 console.log("working");
