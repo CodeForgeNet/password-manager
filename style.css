@@ -211,4 +211,90 @@ input[type="password"]:focus {
 }
 
 
+/*! Responsive  */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        max-width: 95vw;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    ul li {
+        margin: 5px 0;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+}
+
+
+/*  */
+
+@media (max-width: 480px) {
+    table, th, td {
+        font-size: 12px;
+    }
+
+    /* Stack table rows on smaller screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    th, td {
+        display: block;
+        text-align: center;
+        position: relative;
+        padding-left: 50%;
+        box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    }
+
+    th::before, td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Ensure the delete button fits within its container */
+    td:last-child {
+        text-align: center; /* Center the button */
+        padding-left: 0; /* Remove left padding for the button cell */
+    }
+
+    .btnsm {
+        width: 100%; /* Make the button take full width of its container */
+        box-sizing: border-box; /* Include padding and border in the button's width */
+    }
+}
+
 
